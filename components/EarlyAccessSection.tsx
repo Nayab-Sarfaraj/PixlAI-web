@@ -81,8 +81,8 @@ export default function EarlyAccessSection() {
               </form>
             ) : (
               <div className="glass rounded-[24px] p-10 border-primary/20">
-                <h3 className="text-[24px] font-bold text-white mb-3">🎉 You're on the list!</h3>
-                <p className="text-text-secondary">We've reserved your 20 free credits. Check your inbox on launch day!</p>
+                <h3 className="text-[24px] font-bold text-white mb-3">🎉 You&apos;re on the list!</h3>
+                <p className="text-text-secondary">We&apos;ve reserved your 20 free credits. Check your inbox on launch day!</p>
               </div>
             )}
             {error && <p className="text-red-400 text-sm mt-4 font-medium">{error}</p>}

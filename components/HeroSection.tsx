@@ -78,10 +78,10 @@ export default function HeroSection() {
             {error && <p className="text-red-400 text-sm mt-2">{error}</p>}
           </div>
         ) : (
-          <div className="glass rounded-[20px] p-8 max-w-[450px] mx-auto reveal">
-            <h3 className="text-[20px] font-bold text-white mb-2">🎉 You're on the list!</h3>
+          <div className="glass rounded-[20px] p-8 max-w-[450px] mx-auto">
+            <h3 className="text-[20px] font-bold text-white mb-2">🎉 You&apos;re on the list!</h3>
             <p className="text-text-secondary text-sm">
-              We'll notify you the moment PixlAI launches with your 20 free credits ready.
+              We&apos;ll notify you the moment PixlAI launches with your 20 free credits ready.
             </p>
           </div>
         )}

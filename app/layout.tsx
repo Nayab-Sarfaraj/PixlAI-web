@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { DM_Sans } from "next-kit/google"; // Wait, I should use next/font/google
 import { DM_Sans as DMSans } from "next/font/google";
 import "./globals.css";
 
