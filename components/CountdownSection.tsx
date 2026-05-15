@@ -40,24 +40,27 @@ export default function CountdownSection() {
   }, [])
 
   return (
-    <section className="py-24 bg-surface border-y border-white/5 text-center relative overflow-hidden">
+    <section className="py-20 md:py-32 bg-surface/50 border-y border-white/5 text-center relative overflow-hidden">
+      {/* Decorative Blur */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
+
       <div className="max-w-[1100px] mx-auto px-6 relative z-10">
-        <h2 className="text-[32px] md:text-[36px] font-bold text-white mb-12 tracking-tight reveal">
-          {isLaunched ? "We're Live. Download Now." : "Launching on Google Play in."}
+        <h2 className="text-[28px] md:text-[40px] font-bold text-white mb-10 md:mb-16 tracking-tight reveal leading-[1.1]">
+          {isLaunched ? "We're Live. Download Now." : "Launching on Google Play in"}
         </h2>
 
         {isLaunched ? (
-          <Button className="bg-primary hover:bg-primary-hover text-white rounded-xl px-12 py-7 text-lg font-bold shadow-button transition-all">
+          <Button className="bg-primary hover:bg-primary-hover text-white rounded-2xl px-12 h-16 text-lg font-bold shadow-button transition-all">
             Download PixlAI Now
           </Button>
         ) : (
-          <div className="flex flex-wrap justify-center gap-4 md:gap-8 reveal">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-6 max-w-[800px] mx-auto reveal">
             {timeLeft && Object.entries(timeLeft).map(([label, value]) => (
-              <div key={label} className="bg-background border border-white/10 rounded-[32px] px-6 sm:px-10 py-10 min-w-[110px] sm:min-w-[140px] shadow-sm">
-                <div className="text-[44px] sm:text-[52px] font-extrabold text-white leading-none tracking-tighter">
+              <div key={label} className="bg-white/5 border border-white/10 backdrop-blur-sm rounded-3xl p-6 sm:p-8 flex flex-col items-center justify-center transition-transform hover:scale-[1.02] duration-300">
+                <div className="text-[36px] sm:text-[48px] md:text-[56px] font-extrabold text-white leading-none tracking-tighter">
                   {value.toString().padStart(2, '0')}
                 </div>
-                <div className="text-[11px] text-text-tertiary uppercase tracking-[0.2em] mt-5 font-bold">
+                <div className="text-[10px] sm:text-[11px] text-text-tertiary uppercase tracking-[0.2em] mt-3 sm:mt-4 font-bold">
                   {label}
                 </div>
               </div>
@@ -66,7 +69,7 @@ export default function CountdownSection() {
         )}
 
         {!isLaunched && (
-          <p className="text-text-secondary text-[16px] mt-12 font-medium reveal">
+          <p className="text-text-secondary text-[14px] sm:text-[16px] mt-10 md:mt-16 font-medium reveal opacity-70">
             Join the waitlist to get notified the moment we launch.
           </p>
         )}

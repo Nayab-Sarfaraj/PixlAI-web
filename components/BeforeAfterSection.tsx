@@ -36,11 +36,11 @@ export default function BeforeAfterSection() {
         </div>
 
         {/* Main Interactive Slider */}
-        <div className="max-w-[800px] mx-auto mb-20 reveal">
+        <div className="max-w-[850px] mx-auto mb-16 md:mb-24 reveal">
           <BeforeAfterSlider 
             beforeImage="/placeholder-before.jpg" 
             afterImage="/placeholder-after.jpg" 
-            aspectRatio="aspect-[16/9]"
+            aspectRatio="aspect-[4/5] sm:aspect-[16/9]"
           />
         </div>
 

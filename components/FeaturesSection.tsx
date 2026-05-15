@@ -29,7 +29,7 @@ const features = [
 
 export default function FeaturesSection() {
   return (
-    <section id="features" className="py-24 bg-background border-t border-white/5">
+    <section id="features" className="py-32 bg-background border-t border-white/5">
       <div className="max-w-[1100px] mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 reveal">
           <div className="max-w-[600px]">
@@ -43,23 +43,23 @@ export default function FeaturesSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 lg:gap-7">
           {features.map((feature, index) => (
             <div 
               key={index}
-              className="bg-surface border border-white/5 rounded-3xl p-8 reveal hover:bg-card hover:-translate-y-1 transition-all duration-300 cursor-default group"
+              className="bg-surface border border-white/[0.07] rounded-3xl p-9 reveal hover:bg-card hover:-translate-y-1.5 transition-all duration-300 cursor-default group flex flex-col"
               style={{ transitionDelay: `${index * 0.1}s` }}
             >
-              <div className="w-12 h-12 rounded-2xl bg-background border border-white/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-sm">
-                <feature.icon className="w-6 h-6 text-primary" strokeWidth={2} />
+              <div className="w-14 h-14 rounded-2xl bg-background border border-white/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-sm mb-8">
+                <feature.icon className="w-7 h-7 text-primary" strokeWidth={1.75} />
               </div>
-              <h3 className="text-[19px] font-bold text-white mt-8 tracking-tight">
+              <h3 className="text-[20px] font-bold text-white tracking-tight mb-3">
                 {feature.title}
               </h3>
-              <p className="text-[15px] text-text-secondary leading-relaxed mt-3 font-medium">
+              <p className="text-[15px] text-text-secondary leading-[1.7] font-medium flex-1">
                 {feature.description}
               </p>
-              <div className="inline-flex mt-8 rounded-full px-4 py-1.5 bg-background border border-white/5 text-[11px] text-text-tertiary font-bold uppercase tracking-widest">
+              <div className="inline-flex mt-8 rounded-full px-4 py-1.5 bg-background border border-white/5 text-[11px] text-text-tertiary font-bold uppercase tracking-widest w-fit">
                 {feature.tag}
               </div>
             </div>
