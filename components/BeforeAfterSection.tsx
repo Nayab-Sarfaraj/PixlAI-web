@@ -6,19 +6,25 @@ const cards = [
     badge: 'BG Remover',
     badgeColor: 'text-text-secondary bg-white/5 border border-white/10',
     description: 'Removed background instantly with zero edge artifacts.',
-    icon: Scissors
+    icon: Scissors,
+    beforeImage: '/placeholder-before.jpg',
+    afterImage: '/placeholder-after.jpg'
   },
   {
     badge: 'Photo Restore', 
     badgeColor: 'text-text-secondary bg-white/5 border border-white/10',
     description: 'Restored faded colors and sharp details to a 50-year-old photo.',
-    icon: Sparkles
+    icon: Sparkles,
+    beforeImage: '/WhatsApp Image 2026-04-25 at 2.47.44 PM.jpeg',
+    afterImage: '/IMG_20260425_150401.png'
   },
   {
     badge: 'HD Enhance',
     badgeColor: 'text-text-secondary bg-white/5 border border-white/10',
     description: 'Upscaled blurry 480p image to crisp 4K quality.',
-    icon: ImageIcon
+    icon: ImageIcon,
+    beforeImage: '/Gemini_Generated_Image_eyc5iceyc5iceyc5.png',
+    afterImage: '/pixlai-17771140367805431888295215617880.png'
   }
 ]
 
@@ -53,12 +59,14 @@ export default function BeforeAfterSection() {
             >
               {/* Image Area */}
               <div className="h-[240px] relative flex overflow-hidden bg-background">
-                <div className="flex-1 border-r border-white/5 flex items-center justify-center opacity-40">
-                  <card.icon size={48} className="text-white/20" />
-                </div>
-                <div className="flex-1 flex items-center justify-center">
-                  <card.icon size={48} className="text-primary/20" />
-                </div>
+                <div 
+                  className={`flex-1 border-r border-white/5 bg-cover bg-center opacity-60 grayscale-[0.5] ${card.badge === 'HD Enhance' ? 'blur-sm' : ''}`}
+                  style={{ backgroundImage: `url("${card.beforeImage}")` }}
+                />
+                <div 
+                  className="flex-1 bg-cover bg-center"
+                  style={{ backgroundImage: `url("${card.afterImage}")` }}
+                />
                 
                 <div className="absolute top-4 left-4 bg-background/80 backdrop-blur-md text-white text-[9px] px-2.5 py-1.5 rounded-full font-bold uppercase tracking-wider border border-white/5">
                   Before
