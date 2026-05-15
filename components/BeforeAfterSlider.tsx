@@ -1,7 +1,6 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
-import { motion, useMotionValue, useSpring } from 'framer-motion'
+import { useState, useRef } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 interface BeforeAfterSliderProps {

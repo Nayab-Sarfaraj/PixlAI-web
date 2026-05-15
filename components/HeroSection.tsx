@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import { Loader2, Download } from 'lucide-react'
+import { Loader2 } from 'lucide-react'
 import { joinWaitlist } from '@/lib/api'
 
 export default function HeroSection() {
@@ -102,21 +102,6 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* Visual Mockup */}
-        {/* <div className="mt-20 relative max-w-[850px] mx-auto reveal" style={{ transitionDelay: '0.3s' }}>
-          <div className="relative z-10 bg-white/5 border border-white/10 rounded-[40px] p-4 sm:p-6 shadow-2xl backdrop-blur-sm">
-            <div className="rounded-[32px] overflow-hidden border border-white/10 shadow-inner bg-background">
-              <img 
-                src="/app-preview.png" // We'll need to move the generated image here or reference it
-                alt="PixlAI App Interface" 
-                className="w-full h-auto block"
-              />
-            </div>
-          </div>
-          {/* Decorative Elements */}
-          {/* <div className="absolute -top-10 -left-10 w-40 h-40 bg-primary/10 rounded-full blur-[60px] animate-pulse" />
-          <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-primary/10 rounded-full blur-[60px] animate-pulse" />
-        </div>  */}
       </div>
     </section>
   )
