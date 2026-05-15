@@ -18,7 +18,6 @@ export default function CountdownSection() {
     // Target date: 14 days from now
     const target = new Date()
     target.setDate(target.getDate() + 14)
-    // <!-- Update countdown target date in CountdownSection.tsx -->
 
     const timer = setInterval(() => {
       const now = new Date().getTime()
@@ -41,24 +40,24 @@ export default function CountdownSection() {
   }, [])
 
   return (
-    <section className="py-20 bg-gradient-to-br from-surface to-card border-y border-[rgba(124,92,252,0.2)] text-center">
-      <div className="max-w-4xl mx-auto px-6">
-        <h2 className="text-[28px] font-bold text-white mb-10 tracking-tight">
-          {isLaunched ? "🎉 We're Live! Download Now" : "Launching on Google Play in"}
+    <section className="py-24 bg-surface border-y border-white/5 text-center relative overflow-hidden">
+      <div className="max-w-[1100px] mx-auto px-6 relative z-10">
+        <h2 className="text-[32px] md:text-[36px] font-bold text-white mb-12 tracking-tight reveal">
+          {isLaunched ? "We're Live. Download Now." : "Launching on Google Play in."}
         </h2>
 
         {isLaunched ? (
-          <Button className="bg-primary hover:bg-primary-hover rounded-pill px-10 py-7 text-lg font-bold shadow-button">
+          <Button className="bg-primary hover:bg-primary-hover text-white rounded-xl px-12 py-7 text-lg font-bold shadow-button transition-all">
             Download PixlAI Now
           </Button>
         ) : (
-          <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+          <div className="flex flex-wrap justify-center gap-4 md:gap-8 reveal">
             {timeLeft && Object.entries(timeLeft).map(([label, value]) => (
-              <div key={label} className="bg-[rgba(0,0,0,0.3)] border border-[rgba(124,92,252,0.2)] rounded-[20px] px-4 sm:px-6 py-6 min-w-[80px] sm:min-w-[100px] shadow-lg">
-                <div className="text-[32px] sm:text-[48px] font-bold text-primary leading-none">
+              <div key={label} className="bg-background border border-white/10 rounded-[32px] px-6 sm:px-10 py-10 min-w-[110px] sm:min-w-[140px] shadow-sm">
+                <div className="text-[44px] sm:text-[52px] font-extrabold text-white leading-none tracking-tighter">
                   {value.toString().padStart(2, '0')}
                 </div>
-                <div className="text-[11px] text-text-tertiary uppercase tracking-[0.2em] mt-3 font-bold">
+                <div className="text-[11px] text-text-tertiary uppercase tracking-[0.2em] mt-5 font-bold">
                   {label}
                 </div>
               </div>
@@ -67,8 +66,8 @@ export default function CountdownSection() {
         )}
 
         {!isLaunched && (
-          <p className="text-text-secondary text-[15px] mt-10 font-medium">
-            Join the waitlist to get notified the moment we launch
+          <p className="text-text-secondary text-[16px] mt-12 font-medium reveal">
+            Join the waitlist to get notified the moment we launch.
           </p>
         )}
       </div>

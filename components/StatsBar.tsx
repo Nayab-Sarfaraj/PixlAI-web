@@ -6,14 +6,14 @@ const stats = [
 
 export default function StatsBar() {
   return (
-    <div className="w-full bg-surface border-y border-[rgba(255,255,255,0.06)] py-6 sm:py-8">
-      <div className="max-w-6xl mx-auto px-6 flex flex-wrap justify-center gap-8 sm:gap-16 md:gap-24">
+    <div className="w-full bg-surface border-y border-white/5 py-12">
+      <div className="max-w-[1100px] mx-auto px-6 flex flex-wrap justify-center gap-12 sm:gap-24 md:gap-32">
         {stats.map((stat, index) => (
-          <div key={index} className="text-center">
-            <div className="text-[32px] font-bold text-primary tracking-tight leading-none">
+          <div key={index} className="text-center group cursor-default reveal" style={{ transitionDelay: `${index * 0.1}s` }}>
+            <div className="text-[40px] md:text-[44px] font-extrabold text-white tracking-tighter leading-none mb-3">
               {stat.value}
             </div>
-            <div className="text-[13px] text-text-secondary mt-2 font-medium uppercase tracking-wider">
+            <div className="text-[12px] text-text-tertiary font-bold uppercase tracking-[0.2em] group-hover:text-text-secondary transition-colors duration-300">
               {stat.label}
             </div>
           </div>

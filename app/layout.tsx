@@ -1,12 +1,9 @@
 import type { Metadata } from "next";
-import { DM_Sans as DMSans } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
+import ScrollReveal from "@/components/ScrollReveal";
 
-const dmSans = DMSans({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-dm-sans",
-});
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: 'PixlAI — AI Photo Enhancement App',
@@ -25,7 +22,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${dmSans.className} bg-background text-white font-sans antialiased overflow-x-hidden`}>
+      <body className={`${inter.className} bg-background text-white antialiased overflow-x-hidden`}>
+        <ScrollReveal />
         {children}
       </body>
     </html>
