@@ -60,7 +60,7 @@ export default function BeforeAfterSection() {
               {/* Image Area */}
               <div className="h-[240px] relative flex overflow-hidden bg-background">
                 <div 
-                  className={`flex-1 border-r border-white/5 bg-cover bg-center opacity-60 grayscale-[0.5] ${card.badge === 'HD Enhance' ? 'blur-sm' : ''}`}
+                  className="flex-1 border-r border-white/5 bg-cover bg-center opacity-60 grayscale-[0.5]"
                   style={{ backgroundImage: `url("${card.beforeImage}")` }}
                 />
                 <div 
